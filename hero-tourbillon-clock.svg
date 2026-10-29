@@ -1,0 +1,164 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 440" width="100%" height="100%" role="img" aria-label="秒秒云精密陀飞轮机械机芯与全球原子钟同步动态图">
+  <defs>
+    <radialGradient id="dialGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="72%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#E2E8F0"/>
+    </radialGradient>
+    <linearGradient id="sapphireRing" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F2547"/>
+      <stop offset="50%" stop-color="#1E3A6D"/>
+      <stop offset="100%" stop-color="#09172E"/>
+    </linearGradient>
+    <linearGradient id="copperBridge" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#A66024"/>
+      <stop offset="50%" stop-color="#D99352"/>
+      <stop offset="100%" stop-color="#A66024"/>
+    </linearGradient>
+    <radialGradient id="rubyJewel" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#FB7185"/>
+      <stop offset="45%" stop-color="#BE123C"/>
+      <stop offset="100%" stop-color="#881337"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Porcelain Outer Case & Minute Track Background -->
+  <rect x="8" y="8" width="544" height="424" rx="16" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="2"/>
+
+  <!-- Corner Horological Telemetry Labels -->
+  <g font-family="SFMono-Regular, Consolas, monospace" font-size="10" fill="#0F2547" font-weight="700">
+    <text x="24" y="32">STRATUM-1 ATOMIC CLOCK</text>
+    <text x="24" y="46" fill="#BE123C">JITTER: 0.18 ms</text>
+    <text x="410" y="32">TOURBILLON 28,800 VPH</text>
+    <text x="410" y="46" fill="#C27838">PACKET LOSS: 0.00%</text>
+    <text x="24" y="404">IEPL BGP DIRECT CALIBRE</text>
+    <text x="24" y="418" fill="#475569">HKG · TYO · SIN · LAX · FRA</text>
+    <text x="416" y="404">UPTIME 99.998%</text>
+    <text x="416" y="418" fill="#BE123C">COSC PRECISION SYNC</text>
+  </g>
+
+  <!-- Outer Celestial Cloud Orbit Ring -->
+  <circle cx="280" cy="220" r="182" fill="none" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="4 6"/>
+  <circle cx="280" cy="220" r="164" fill="url(#dialGrad)" stroke="url(#sapphireRing)" stroke-width="8"/>
+
+  <!-- Guilloche Concentric Wave Circles -->
+  <circle cx="280" cy="220" r="146" fill="none" stroke="#CBD5E1" stroke-width="1"/>
+  <circle cx="280" cy="220" r="126" fill="none" stroke="#E2E8F0" stroke-width="1.5" stroke-dasharray="2 4"/>
+  <circle cx="280" cy="220" r="98" fill="none" stroke="#CBD5E1" stroke-width="1"/>
+
+  <!-- 12 Hour Baton Markers around Dial -->
+  <g stroke="#0F2547" stroke-width="3" stroke-linecap="round">
+    <line x1="280" y1="64" x2="280" y2="78"/>
+    <line x1="358" y1="85" x2="351" y2="97"/>
+    <line x1="415" y1="142" x2="403" y2="149"/>
+    <line x1="436" y1="220" x2="422" y2="220"/>
+    <line x1="415" y1="298" x2="403" y2="291"/>
+    <line x1="358" y1="355" x2="351" y2="343"/>
+    <line x1="280" y1="376" x2="280" y2="362"/>
+    <line x1="202" y1="355" x2="209" y2="343"/>
+    <line x1="145" y1="298" x2="157" y2="291"/>
+    <line x1="124" y1="220" x2="138" y2="220"/>
+    <line x1="145" y1="142" x2="157" y2="149"/>
+    <line x1="202" y1="85" x2="209" y2="97"/>
+  </g>
+
+  <!-- Dial Inscription -->
+  <text x="280" y="114" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" font-weight="800" fill="#0F2547" letter-spacing="3">秒秒云 · 精密专线</text>
+  <text x="280" y="130" text-anchor="middle" font-family="SFMono-Regular, Consolas, monospace" font-size="9" font-weight="700" fill="#C27838" letter-spacing="1.5">CHRONOMETER ESCAPEMENT</text>
+
+  <!-- Sub-dial Left (Latency Gauge) -->
+  <g transform="translate(196, 206)">
+    <circle cx="0" cy="0" r="34" fill="#FFFFFF" stroke="#0F2547" stroke-width="2"/>
+    <circle cx="0" cy="0" r="28" fill="none" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="2 3"/>
+    <text x="0" y="-12" text-anchor="middle" font-family="SFMono-Regular, Consolas, monospace" font-size="7.5" fill="#475569">PING MS</text>
+    <text x="0" y="20" text-anchor="middle" font-family="SFMono-Regular, Consolas, monospace" font-size="8.5" font-weight="700" fill="#BE123C">8.2ms</text>
+    <g>
+      <line x1="0" y1="4" x2="0" y2="-22" stroke="#BE123C" stroke-width="2" stroke-linecap="round"/>
+      <animateTransform attributeName="transform" type="rotate" values="-35;25;-35" dur="4s" repeatCount="indefinite"/>
+    </g>
+    <circle cx="0" cy="0" r="3.5" fill="url(#rubyJewel)"/>
+  </g>
+
+  <!-- Sub-dial Right (Bandwidth Reserve) -->
+  <g transform="translate(364, 206)">
+    <circle cx="0" cy="0" r="34" fill="#FFFFFF" stroke="#0F2547" stroke-width="2"/>
+    <circle cx="0" cy="0" r="28" fill="none" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="2 3"/>
+    <text x="0" y="-12" text-anchor="middle" font-family="SFMono-Regular, Consolas, monospace" font-size="7.5" fill="#475569">RESERVE</text>
+    <text x="0" y="20" text-anchor="middle" font-family="SFMono-Regular, Consolas, monospace" font-size="8.5" font-weight="700" fill="#0F2547">10Gbps</text>
+    <g>
+      <line x1="0" y1="4" x2="18" y2="-14" stroke="#0F2547" stroke-width="2" stroke-linecap="round"/>
+      <animateTransform attributeName="transform" type="rotate" values="0;360" dur="12s" repeatCount="indefinite"/>
+    </g>
+    <circle cx="0" cy="0" r="3.5" fill="url(#rubyJewel)"/>
+  </g>
+
+  <!-- Open-Heart Tourbillon Cage at 6 O'Clock (cx=280, cy=286) -->
+  <g transform="translate(280, 286)">
+    <!-- Aperture Recess -->
+    <circle cx="0" cy="0" r="54" fill="#09172E" stroke="#C27838" stroke-width="3"/>
+    <circle cx="0" cy="0" r="48" fill="none" stroke="#475569" stroke-width="1" stroke-dasharray="3 3"/>
+
+    <!-- Outer Counter-Rotating Escapement Gear -->
+    <g>
+      <circle cx="0" cy="0" r="40" fill="none" stroke="#C27838" stroke-width="2.5" stroke-dasharray="6 4"/>
+      <line x1="-40" y1="0" x2="40" y2="0" stroke="#C27838" stroke-width="1.5"/>
+      <line x1="0" y1="-40" x2="0" y2="40" stroke="#C27838" stroke-width="1.5"/>
+      <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="10s" repeatCount="indefinite"/>
+    </g>
+
+    <!-- Inner Rotating Tourbillon Carriage -->
+    <g>
+      <circle cx="0" cy="0" r="27" fill="none" stroke="#F8FAFC" stroke-width="2"/>
+      <polygon points="0,-27 7,-8 26,-8 11,4 17,23 0,12 -17,23 -11,4 -26,-8 -7,-8" fill="none" stroke="#38BDF8" stroke-width="1.2" opacity="0.85"/>
+      <circle cx="0" cy="-19" r="3" fill="#BE123C"/>
+      <circle cx="19" cy="0" r="3" fill="#BE123C"/>
+      <circle cx="0" cy="19" r="3" fill="#BE123C"/>
+      <circle cx="-19" cy="0" r="3" fill="#BE123C"/>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="6s" repeatCount="indefinite"/>
+    </g>
+
+    <!-- Tourbillon Upper Bridge -->
+    <rect x="-58" y="-5" width="116" height="10" rx="5" fill="url(#copperBridge)" stroke="#0F2547" stroke-width="1.5"/>
+    <!-- Center Ruby Bearing Jewel -->
+    <circle cx="0" cy="0" r="7" fill="url(#rubyJewel)" stroke="#FFFFFF" stroke-width="1.5">
+      <animate attributeName="r" values="6.5;8;6.5" dur="1.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Central Main Hands (cx=280, cy=220) -->
+  <g transform="translate(280, 220)">
+    <!-- Hour Hand -->
+    <g>
+      <polygon points="-4,18 -2,-78 0,-86 2,-78 4,18" fill="#0F2547"/>
+      <animateTransform attributeName="transform" type="rotate" from="35" to="395" dur="120s" repeatCount="indefinite"/>
+    </g>
+    <!-- Minute Hand -->
+    <g>
+      <polygon points="-3,24 -1.5,-118 0,-128 1.5,-118 3,24" fill="#0F2547"/>
+      <animateTransform attributeName="transform" type="rotate" from="290" to="650" dur="36s" repeatCount="indefinite"/>
+    </g>
+    <!-- Sweeping Ruby-Tipped Chronograph Second Hand -->
+    <g>
+      <line x1="0" y1="34" x2="0" y2="-142" stroke="#BE123C" stroke-width="2.2" stroke-linecap="round"/>
+      <circle cx="0" cy="-118" r="5" fill="url(#rubyJewel)" stroke="#FFFFFF" stroke-width="1"/>
+      <circle cx="0" cy="22" r="4" fill="none" stroke="#BE123C" stroke-width="2"/>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="8s" repeatCount="indefinite"/>
+    </g>
+    <!-- Central Cap Jewel -->
+    <circle cx="0" cy="0" r="8" fill="#C27838" stroke="#0F2547" stroke-width="2"/>
+    <circle cx="0" cy="0" r="4" fill="url(#rubyJewel)"/>
+  </g>
+
+  <!-- Orbital Cloud Satellites Syncing Around the Outer Ring -->
+  <g transform="translate(280, 220)">
+    <g>
+      <circle cx="0" cy="-182" r="10" fill="#0F2547" stroke="#C27838" stroke-width="2"/>
+      <circle cx="0" cy="-182" r="4" fill="#BE123C"/>
+      <circle cx="182" cy="0" r="9" fill="#0F2547" stroke="#C27838" stroke-width="2"/>
+      <circle cx="182" cy="0" r="3.5" fill="#F8FAFC"/>
+      <circle cx="-182" cy="0" r="9" fill="#0F2547" stroke="#C27838" stroke-width="2"/>
+      <circle cx="-182" cy="0" r="3.5" fill="#BE123C"/>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="18s" repeatCount="indefinite"/>
+    </g>
+  </g>
+</svg>
