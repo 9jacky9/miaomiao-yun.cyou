@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Infuse挂载海外云盘4K原盘秒开教程：高并发线程与代理分流规则精调 - 秒秒云刻度专栏</title>
-  <meta name="description" content="手把手教你配置Apple TV 4K与Infuse挂载Google Drive、OneDrive及WebDAV海外云盘，通过高并发预读缓存与秒秒云IEPL专线分流规则实现80GB蓝光Remux原盘秒开。">
+  <title>语言考试在线版的网络要求：设备、监考与应急 - 秒秒云刻度专栏</title>
+  <meta name="description" content="参加托福在家考、雅思等在线语言考试，对网络与设备有什么要求？整理考前检查、监考软件、网络要求与突发状况的应对。">
   <meta name="keywords" content="Infuse 4K秒开,Apple TV代理配置,WebDAV挂载云盘,蓝光原盘流媒体加速,Stash分流规则">
   <link rel="canonical" href="https://miaomiao-yun.cyou/apple-tv-infuse-webdav-streaming.html">
   <link rel="stylesheet" href="style.css">
@@ -49,41 +49,31 @@
 
   <section class="page-hero-banner">
     <div class="container">
-      <span class="section-index-tag">CINEMA STREAMING CALIBRE · 03</span>
-      <h1>Infuse挂载海外云盘4K原盘秒开教程：高并发线程与代理分流规则精调</h1>
-      <p>打通 Apple TV 4K、Alist WebDAV 与海外对象存储的吞吐瓶颈，让百吉字节杜比视界原盘如本地硬盘般丝滑播放。</p>
+      <span class="section-index-tag">语言考试</span>
+      <h1>语言考试在线版的网络要求：设备、监考与应急</h1>
+      <p>设备要稳、网络要稳、心态更要稳。</p>
     </div>
   </section>
 
   <main class="container">
     <article class="article-layout">
       <div class="article-meta-bar">
-        <span>发布日期：2026-10-28</span>
-        <span>机芯编号：CAL. MMY-INFUSE-03</span>
-        <span>分类：<a href="chrono-column.html">刻度专栏</a> · 影音工程</span>
-      </div>
+ <span>发布日期：2026-11-15</span>
+ <span>撰写：秒秒云使用手记</span>
+ <span>分类：<a href="chrono-column.html">刻度专栏</a> · 在线考试</span>
+ </div>
       <div class="article-content">
-        <h2>一、为什么千兆宽带播放云盘 4K Remux 原盘依然会转圈？</h2>
-        <p>随着 tvOS 全面开放网络隧道扩展接口，越来越多家庭影音爱好者选择使用 Apple TV 4K 搭配 Infuse 播放器，直接通过 WebDAV 或原生 API 挂载 Google Drive、OneDrive、Dropbox 及海外 Emby/Jellyfin 媒体库。然而不少用户发现，明明家里办理了千兆光纤宽带，但在播放单部体积达 60GB 至 90GB 的 4K UHD 蓝光 Remux 原盘（包含杜比视界 Profile 7/8 与 TrueHD 全景声轨）时，依然频繁遭遇起播缓慢或高码率打斗场景卡顿。</p>
-        <p>究其症结，4K 原盘的平均码率通常在 65 Mbps 至 95 Mbps 之间，而在复杂光影爆炸镜头下瞬时峰值码率可飙升至 140 Mbps 以上。普通代理节点受制于跨国 TCP 慢启动（Slow Start）窗口限制以及单线程限速策略，一旦丢包重传就会导致 TCP 拥塞窗口减半，Infuse 的环形预读缓冲区瞬间见底，从而引发画面停滞。</p>
-
-        <h2>二、Infuse 客户端传输层与预读缓存参数精调</h2>
-        <h4>1. 缓存模式与磁盘预分配策略选择</h3>
-        <p>进入 Apple TV 端 Infuse 的“设置 - 播放 - 流媒体缓存”菜单，建议将缓存模式从“旧版”或“仅内存”明确切换为“自动（磁盘高速缓存）”。拥有 64GB 或 128GB 存储空间的 Apple TV 4K 能够利用本地高速 NVMe 闪存建立长达数分钟的向前预读池，有效平滑短时间的网络波动。</p>
-        <h3>2. WebDAV 分块读取与 HTTPS 硬件加速</h3>
-        <p>当通过 Alist 或 Rclone 挂载海外网盘并以 WebDAV 协议输出给 Infuse 时，务必选择“直接连接（Direct Mode）”或 302 重定向直链模式，避免由性能孱弱的 VPS 中转视频流字节。同时确保启用 TLS 1.3 硬件加密套件，以充分发挥 Apple A15 仿生芯片的硬件解密吞吐性能。若使用自建 Nginx 反代 WebDAV 接口，还应当在服务端配置中显式关闭代理缓冲（设置 `proxy_buffering off`），并开启 HTTP/2 长连接支持，使客户端发起的每一次字节范围请求都能第一时间穿透至底层块存储。</p>
-        <h3>3. 杜比视界与全景声音轨直通缓冲调优</h3>
-        <p>在播放包含 Dolby Atmos 无损音轨与高码率 PGS 图形字幕的蓝光原盘时，Infuse 需要同时发起音频流、视频流与字幕索引三条并发读取线程。预先在路由或客户端层面开启 TCP 窗口缩放因子（Window Scaling），能够大幅降低多线程抢占带宽时的头部阻塞概率。</p>
-
-        <h2>三、tvOS 代理客户端分流规则与专线节点选型</h2>
-        <h3>1. 精细化域名分流与拒绝无效嗅探</h3>
-        <p>在 Stash、Surge tvOS 或 Quantumult X 中，针对云盘直链域名（如 `*.googleapis.com`、`*.1drv.com`、`*.sharepoint.com`）以及 TMDB 海报刮削域名（`api.themoviedb.org`、`image.tmdb.org`），应单独建立名为 `CloudCinema` 的策略组，并关闭对该策略组的 MITM 解密与深层包嗅探，减少软路由或 Apple TV 本机的 CPU 上下文切换开销。</p>
-        <h3>2. 选择具备大带宽冗余的 IEPL 物理专线节点</h3>
-        <p>由于 Infuse 拉取视频流主要依赖少量的 HTTP Range 长连接，节点的单线程突发吞吐能力至关重要。参考 <a href="https://tizilab.net/" target="_blank">第三方流媒体专线机场横评数据库</a> 公布的 4K 原盘持续拉流测试标准，只有单线程稳定维持在 250 Mbps 以上、且晚高峰抖动低于 1 毫秒的 IEPL 物理专线，才能实现任意拖拽 80GB 视频进度条在 1.2 秒内恢复播放。在秒秒云的节点矩阵中，优先选用“香港 IEPL 旗舰 01-06”或“新加坡原生大带宽”节点，即可获得最佳的直链拉取速率。</p>
-
-        <h2>四、实战验证：杜比视界蓝光原盘起播与拖拽测试</h2>
-        <p>完成上述规则调优并接入秒秒云陀飞轮旗舰专线后，我们实测挂载 Google Drive 中的 84GB《沙丘2》4K Remux 蓝光原盘：点击播放按钮至杜比视界徽标点亮仅耗时 1.4 秒；在两个半小时的观影过程中，连续十次跨章节大幅度拖拽进度条，平均缓冲恢复时间仅为 0.9 秒，真正将云端海量影库变成了客厅里的私人零延迟放映室。</p>
-      </div>
+<h2>一、先读官方要求</h2>
+<p>不同考试对设备、浏览器、摄像头与网络带宽的要求不同。考前一周把官方的技术要求逐条核对一遍。</p>
+<h2>二、设备与环境检查</h2>
+<ul><li>电脑电量充足并接电源。</li><li>摄像头、麦克风、耳机工作正常。</li><li>关闭所有不相关的软件与通知。</li></ul>
+<h2>三、网络的准备</h2>
+<p>使用有线网络，并让家人错开使用。参加官方提供的设备检测，在不同时段测试网络稳定性。</p>
+<h2>四、关于加速服务</h2>
+<p>考试软件对网络环境有明确规定，多数不建议在考试期间使用代理或虚拟网络。请遵守考场规则，不要冒险。</p>
+<h2>五、突发状况的应对</h2>
+<p>记录官方的技术支持联系方式。如果遇到断线，按规则尽快重连并联系监考，不要自行反复重启设备。</p>
+ </div>
     </article>
 
     <!-- Related Articles -->
@@ -95,17 +85,17 @@
       <div class="grid-3">
         <article class="dial-card">
           <span class="calibre-serial">CALIBRE REPORT · 01</span>
-          <h3><a href="miaomiao-precision-network-benchmark.html">像陀飞轮一样精准稳定：秒秒云2026全天候低抖动跨境网络实测</a></h3>
+          <h3><a href="miaomiao-precision-network-benchmark.html">秒秒云节奏表：一天里什么时段适合做什么</a></h3>
           <p>72小时连续采样，全面检验秒秒云在跨网与晚高峰极端工况下的真实表现。</p>
         </article>
         <article class="dial-card">
           <span class="calibre-serial">CALIBRE REPORT · 04</span>
-          <h3><a href="claude-artifacts-realtime-rendering.html">Claude与ChatGPT前端画布实时渲染卡顿？揭秘WebSocket长连接保活策略</a></h3>
+          <h3><a href="claude-artifacts-realtime-rendering.html">在线编程学习与开源社区：LeetCode、Codecademy、GitHub 的访问习惯</a></h3>
           <p>深入排查大模型 SSE 流式输出与 WebSocket 双工信道断流根源。</p>
         </article>
         <article class="dial-card">
           <span class="calibre-serial">CALIBRE REPORT · 05</span>
-          <h3><a href="dns-over-https-privacy-protection.html">DoH与DoT加密DNS实战评测：彻底告别域名抢答与运营商缓存污染</a></h4>
+          <h3><a href="dns-over-https-privacy-protection.html">手机应用权限检查：哪些权限该给、哪些该收回</a></h4>
           <p>对比 UDP 53 明文解析与 DoH/DoT 加密协议的性能差异与防污染实战。</p>
         </article>
       </div>
