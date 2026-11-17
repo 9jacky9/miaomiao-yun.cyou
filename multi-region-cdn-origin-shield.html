@@ -1,118 +1,123 @@
 <!DOCTYPE html>
+
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CDN 是什么：为什么有些网站在海外很快、有些很慢 - 秒秒云刻度专栏</title>
-  <meta name="description" content="CDN 内容分发网络是什么？用通俗的比喻说明它的工作方式、为什么有些网站海外访问快有些慢，以及对使用者的实际影响。">
-  <meta name="keywords" content="独立站出海加速,多区域CDN回源,Origin Shield源站护盾,跨境电商专线网络,海外店铺防关联IP">
-  <link rel="canonical" href="https://miaomiao-yun.cyou/multi-region-cdn-origin-shield.html">
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>网站用了CDN为什么仍然慢：区分缓存命中、回源和动态请求</title>
+<meta content="从访问者和站点维护者两个视角解释CDN慢的不同原因，按资源类型、缓存状态和源站响应分层收集证据。" name="description"/>
+<meta content="独立站出海加速,多区域CDN回源,Origin Shield源站护盾,跨境电商专线网络,海外店铺防关联IP" name="keywords"/>
+<link href="https://miaomiao-yun.cyou/multi-region-cdn-origin-shield.html" rel="canonical"/>
+<link href="style.css" rel="stylesheet"/>
 </head>
 <body>
-
-  <div class="chronometer-top-strip">
-    <div class="container chronometer-top-inner">
-      <span class="calibre-tag"><span class="ruby-jewel-dot"></span> SWISS HOROLOGY NETWORK ARCHITECTURE · CALIBRE MMY-2026</span>
-      <span class="calibre-tag">STRATUM-1 原子钟同步 · 全球骨干网抖动 &lt; 0.2ms</span>
-    </div>
-  </div>
-
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="index.html" class="brand-logo" aria-label="秒秒云首页">
-        <svg viewBox="0 0 230 50" role="img" aria-label="秒秒云陀飞轮擒纵齿轮与红宝石秒针融合标志">
-          <g transform="translate(26, 25)">
-            <circle cx="0" cy="0" r="20" fill="#FFFFFF" stroke="#0F2547" stroke-width="2.5"/>
-            <circle cx="0" cy="0" r="15" fill="none" stroke="#C27838" stroke-width="1.8" stroke-dasharray="4 3"/>
-            <line x1="-18" y1="0" x2="18" y2="0" stroke="#CBD5E1" stroke-width="1"/>
-            <line x1="0" y1="-18" x2="0" y2="18" stroke="#CBD5E1" stroke-width="1"/>
-            <line x1="-5" y1="7" x2="12" y2="-13" stroke="#BE123C" stroke-width="2.5" stroke-linecap="round"/>
-            <circle cx="9" cy="-10" r="3" fill="#BE123C"/>
-            <circle cx="0" cy="0" r="4" fill="#0F2547" stroke="#C27838" stroke-width="1.5"/>
-          </g>
-          <text x="56" y="29" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="800" fill="#0F2547" letter-spacing="1.5">秒秒云</text>
-          <circle cx="131" cy="14" r="3" fill="#BE123C"/>
-          <text x="56" y="43" font-family="SFMono-Regular, Consolas, monospace" font-size="8.5" font-weight="700" fill="#C27838" letter-spacing="1.8">CHRONO CLOUD</text>
-        </svg>
-      </a>
-      <nav class="main-nav" aria-label="主导航">
-        <a href="index.html">首页表盘</a>
-        <a href="index.html#advantages">天文台机芯</a>
-        <a href="index.html#streaming">流媒体与AI</a>
-        <a href="index.html#pricing">专线方案</a>
-        <a href="index.html#faq">技术问答</a>
-        <a href="chrono-column.html" class="nav-hub-pill active">刻度专栏</a>
-      </nav>
-    </div>
-  </header>
-
-  <section class="page-hero-banner">
-    <div class="container">
-      <span class="section-index-tag">概念</span>
-      <h1>CDN 是什么：为什么有些网站在海外很快、有些很慢</h1>
-      <p>把内容放到离你更近的地方。</p>
-    </div>
-  </section>
-
-  <main class="container">
-    <article class="article-layout">
-      <div class="article-meta-bar">
- <span>发布日期：2026-11-11</span>
- <span>撰写：秒秒云使用手记</span>
- <span>分类：<a href="chrono-column.html">刻度专栏</a> · 网络知识</span>
- </div>
-      <div class="article-content">
-<h2>一、用快递仓库来比喻</h2>
-<p>想象一家公司只有一个总仓库，全国的订单都从那里发货，远一点的地方自然慢。CDN 就是在各地建立“分仓”，把常被订购的商品提前放进去。</p>
-<h2>二、CDN 做了什么</h2>
-<p>网站把图片、视频、脚本等静态内容存放到全球各地的节点。用户访问时，从最近的节点获取，速度更快，也减轻了源站压力。</p>
-<h2>三、为什么有的网站慢</h2>
-<ul><li>没有使用 CDN，所有请求都回到远处的源站。</li><li>CDN 的节点在你所在地区较少。</li><li>动态内容无法被缓存，仍需回源站获取。</li></ul>
-<h2>四、对你的影响</h2>
-<p>同一个网站，不同地区访问速度不同，往往与 CDN 的覆盖有关。选择不同的出口地区，有时能得到更快的节点。</p>
-<h2>五、延伸</h2>
-<p>站长可以通过使用 CDN 与优化资源，提升海外用户的访问体验。</p>
- </div>
-    </article>
-
-    <!-- Related Articles -->
-    <section class="section-block">
-      <div class="section-header">
-        <span class="section-index-tag">RELATED CALIBRE REPORTS</span>
-        <h2 class="section-title">刻度专栏 · 延伸阅读</h2>
-      </div>
-      <div class="grid-3">
-        <article class="dial-card">
-          <span class="calibre-serial">CALIBRE REPORT · 01</span>
-          <h3><a href="miaomiao-precision-network-benchmark.html">秒秒云节奏表：一天里什么时段适合做什么</a></h3>
-          <p>72小时连续采样，全面检验秒秒云在跨网与晚高峰极端工况下的真实表现。</p>
-        </article>
-        <article class="dial-card">
-          <span class="calibre-serial">CALIBRE REPORT · 02</span>
-          <h3><a href="ntp-stratum-clock-sync-trading.html">系统时间为什么重要：同步时间能解决的五类问题</a></h3>
-          <p>解析 Stratum-1 原子钟授时与跨境专线如何消除高频 API 交易订单中的时间戳漂移。</p>
-        </article>
-        <article class="dial-card">
-          <span class="calibre-serial">CALIBRE REPORT · 04</span>
-          <h3><a href="claude-artifacts-realtime-rendering.html">在线编程学习与开源社区：LeetCode、Codecademy、GitHub 的访问习惯</a></h3>
-          <p>深入排查大模型 SSE 流式输出与 WebSocket 双工信道断流根源。</p>
-        </article>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <nav class="footer-links" aria-label="页脚导航">
-        <a href="sitemap.html">网站地图</a>
-        <a href="about.html">关于我们</a>
-        <a href="terms.html">服务条款</a>
-        <a href="privacy.html">隐私政策</a>
-      </nav>
-      <p class="footer-copy">© 2026 秒秒云 · 瑞士天文台级精密跨境网络加速专线</p>
-    </div>
-  </footer>
-
+<div class="chronometer-top-strip">
+<div class="container chronometer-top-inner">
+<span class="calibre-tag"><span class="ruby-jewel-dot"></span> SWISS HOROLOGY NETWORK ARCHITECTURE · CALIBRE MMY-2026</span>
+<span class="calibre-tag">STRATUM-1 原子钟同步 · 全球骨干网抖动 &lt; 0.2ms</span>
+</div>
+</div>
+<header class="site-header">
+<div class="container header-inner">
+<a aria-label="秒秒云首页" class="brand-logo" href="index.html">
+<svg aria-label="秒秒云陀飞轮擒纵齿轮与红宝石秒针融合标志" role="img" viewbox="0 0 230 50">
+<g transform="translate(26, 25)">
+<circle cx="0" cy="0" fill="#FFFFFF" r="20" stroke="#0F2547" stroke-width="2.5"></circle>
+<circle cx="0" cy="0" fill="none" r="15" stroke="#C27838" stroke-dasharray="4 3" stroke-width="1.8"></circle>
+<line stroke="#CBD5E1" stroke-width="1" x1="-18" x2="18" y1="0" y2="0"></line>
+<line stroke="#CBD5E1" stroke-width="1" x1="0" x2="0" y1="-18" y2="18"></line>
+<line stroke="#BE123C" stroke-linecap="round" stroke-width="2.5" x1="-5" x2="12" y1="7" y2="-13"></line>
+<circle cx="9" cy="-10" fill="#BE123C" r="3"></circle>
+<circle cx="0" cy="0" fill="#0F2547" r="4" stroke="#C27838" stroke-width="1.5"></circle>
+</g>
+<text fill="#0F2547" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="800" letter-spacing="1.5" x="56" y="29">秒秒云</text>
+<circle cx="131" cy="14" fill="#BE123C" r="3"></circle>
+<text fill="#C27838" font-family="SFMono-Regular, Consolas, monospace" font-size="8.5" font-weight="700" letter-spacing="1.8" x="56" y="43">CHRONO CLOUD</text>
+</svg>
+</a>
+<nav aria-label="主导航" class="main-nav">
+<a href="index.html">首页表盘</a>
+<a href="index.html#advantages">天文台机芯</a>
+<a href="index.html#streaming">流媒体与AI</a>
+<a href="index.html#pricing">专线方案</a>
+<a href="index.html#faq">技术问答</a>
+<a class="nav-hub-pill active" href="chrono-column.html">刻度专栏</a>
+</nav>
+</div>
+</header>
+<section class="page-hero-banner">
+<div class="container">
+<span class="section-index-tag">概念</span>
+<h1>网站用了CDN为什么仍然慢：区分缓存命中、回源和动态请求</h1>
+<p>把内容放到离你更近的地方。</p>
+</div>
+</section>
+<main class="container">
+<article class="article-layout">
+<div class="article-meta-bar">
+<span>发布日期：2026-11-11</span>
+<span>撰写：秒秒云使用手记</span>
+<span>分类：<a href="chrono-column.html">刻度专栏</a> · 网络知识</span>
+</div>
+<div class="article-content"><div data-swc-article-body="2026-11-16"><p>网站接入CDN后仍然慢，先不要急着换服务商。一个页面同时包含文档、图片、脚本和接口请求，它们可能采用不同缓存策略。下面以桌面Chrome为例，从浏览器取得一份可复查记录，区分本地缓存、边缘交付和源站等待。操作只观察正常请求，不改变网站配置，也不需要公开账号资料。</p>
+<h2>一、打开网络面板，录下真正的慢请求</h2>
+<ol><li>在待检查页面打开浏览器菜单，进入更多工具中的开发者工具，再选择Network面板。界面语言不同可能显示“网络”。</li><li>确认左上角录制按钮处于开启状态，先清空旧记录，再刷新页面。不要连续刷新十几次，一次完整加载更容易分析。</li><li>等待故障出现，记下具体动作和时间。若需要跨页面跳转，启用Preserve log保留记录；否则可保持关闭，避免旧请求混在一起。</li></ol>
+<p>这一轮先保持正常缓存设置，代表日常访问体验。记录网络环境和浏览器版本，避免拿不同设备、不同日期的截图直接比较。若使用的是登录页面，日志可能包含个人数据，后续只分享脱敏的必要信息。</p>
+<h2>二、先筛选资源，再按耗时定位</h2>
+<p>点击Img查看图片，点击Fetch/XHR查看常见接口请求，点击Doc查看文档；也可以在过滤框输入已知文件名的一部分。点Time列查看耗时较长的项目，再看Waterfall中的开始与结束位置。一个请求很晚开始，不一定是服务器慢，也可能要等待前面的脚本执行。</p>
+<p>选择一张慢图片和一个慢接口分别调查，不要把它们合成“全站慢”。例如图片已显示，搜索按钮仍等待，就应优先看点击后新增的接口，而不是反复优化首页背景图。失败状态也要单独记录，它与成功但耗时长是不同问题。</p>
+<h2>三、在Timing里判断等待阶段</h2>
+<p>点击具体请求，在详情区打开Timing。观察名称解析、初始连接、加密协商、等待首字节和内容下载分别占了多少时间。连接阶段长可以提示调查接入或握手；等待首字节长则可能涉及网络往返、CDN处理和源站，不能直接等同于数据库慢。</p>
+<p>如果首字节很快，但Content Download持续很久，继续查看资源体积与传输条件。如果多个请求先排队再陆续开始，应调查资源依赖与连接竞争。把这些阶段写进<a href="https://dajichang.mom/">CDN缓存与回源排查</a>记录，比只保存总加载时间更容易确定下一步。</p>
+<h2>四、通过Headers与Size辨认缓存线索</h2>
+<p>切到Headers，先看请求地址、响应状态，再读Response Headers。Cache-Control描述缓存条件；private通常限制共享缓存，no-store要求不存储，no-cache则不等于永远不存储，而是重用前需要验证。不要因为名字相似就把几种含义混为一谈。</p>
+<p>回到请求表查看Size或传输大小信息，若显示memory cache或disk cache，说明这次资源来自浏览器缓存，不能用它证明CDN命中。部分平台提供自己的缓存状态或请求标识，应查该平台说明；没有某个常见字段，也不能直接判定没有使用CDN。</p>
+<p>如果状态是三〇四，表示条件请求得到未修改响应，浏览器继续利用已有内容；它与直接从内存读取不同。此时同时查看请求头中的验证条件和响应头，别把小传输量误读为图片本身很小。必要时展开大小列，分别辨认传输量与解压后的资源大小。</p>
+<h2>五、做两轮有明确目的的对照</h2>
+<ol><li>保留正常缓存状态，刷新并记录资源地址、状态、传输大小和耗时。</li><li>保持开发者工具打开，勾选Disable cache，再刷新一次，对同一资源重新记录。</li><li>比较差异后取消勾选，恢复普通浏览条件。该选项针对浏览器缓存，不等于清除了CDN边缘缓存。</li></ol>
+<p>若第二轮较慢，只能说明本地缓存对体验有帮助，还需要响应信息判断远端过程。不要随意在地址后加随机参数来制造“冷缓存”，因为参数可能改变业务逻辑、缓存键或权限，得到的已不是原请求。</p>
+<h2>六、站点维护者再关联回源证据</h2>
+<p>维护自己的网站时，用发生时间、资源地址和平台提供的请求标识查询对应日志。确认请求是否到达源站、处理多久、有没有重试。若没有日志权限，就将这些必要信息交给维护方，不凭浏览器的一项等待时间猜测内部故障。</p>
+<p>一张几兆大小的图片即使命中边缘，仍可能让移动网络用户等待。检查实际显示尺寸与文件体积，先在测试环境优化合适的资源。个人账户、订单和私人接口则不能为了速度强行公共缓存，功能正确和数据隔离必须同时保留。</p>
+<h2>七、用原来的任务验收改进</h2>
+<p>修复后沿用同一页面、设备和操作重录一轮，检查原慢请求是否改善，再确认登录、内容更新和错误页没有受影响。不要只看总分，也不要仅凭第一次加载正常就宣布所有地区恢复。记录本次验证覆盖的网络与任务即可。</p>
+<p>最终留下资源名称、观察阶段、缓存线索、处理动作和复测结果五项。没有证据的环节标为待查，这份记录既能帮助下一位维护者继续调查，也能避免下次遇到卡顿时又从换CDN开始猜。</p></div></div>
+</article>
+<!-- Related Articles -->
+<section class="section-block">
+<div class="section-header">
+<span class="section-index-tag">RELATED CALIBRE REPORTS</span>
+<h2 class="section-title">刻度专栏 · 延伸阅读</h2>
+</div>
+<div class="grid-3">
+<article class="dial-card">
+<span class="calibre-serial">CALIBRE REPORT · 01</span>
+<h3><a href="miaomiao-precision-network-benchmark.html">秒秒云节奏表：一天里什么时段适合做什么</a></h3>
+<p>72小时连续采样，全面检验秒秒云在跨网与晚高峰极端工况下的真实表现。</p>
+</article>
+<article class="dial-card">
+<span class="calibre-serial">CALIBRE REPORT · 02</span>
+<h3><a href="ntp-stratum-clock-sync-trading.html">系统时间为什么重要：同步时间能解决的五类问题</a></h3>
+<p>解析 Stratum-1 原子钟授时与跨境专线如何消除高频 API 交易订单中的时间戳漂移。</p>
+</article>
+<article class="dial-card">
+<span class="calibre-serial">CALIBRE REPORT · 04</span>
+<h3><a href="claude-artifacts-realtime-rendering.html">在线编程学习与开源社区：LeetCode、Codecademy、GitHub 的访问习惯</a></h3>
+<p>深入排查大模型 SSE 流式输出与 WebSocket 双工信道断流根源。</p>
+</article>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="container footer-inner">
+<nav aria-label="页脚导航" class="footer-links">
+<a href="sitemap.html">网站地图</a>
+<a href="about.html">关于我们</a>
+<a href="terms.html">服务条款</a>
+<a href="privacy.html">隐私政策</a>
+</nav>
+<p class="footer-copy">© 2026 秒秒云 · 瑞士天文台级精密跨境网络加速专线</p>
+</div>
+</footer>
 </body>
 </html>

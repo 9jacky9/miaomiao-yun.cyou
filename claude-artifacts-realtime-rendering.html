@@ -1,118 +1,122 @@
 <!DOCTYPE html>
+
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>在线编程学习与开源社区：LeetCode、Codecademy、GitHub 的访问习惯 - 秒秒云刻度专栏</title>
-  <meta name="description" content="自学编程需要经常访问练习平台与开源社区。介绍这些网站的访问稳定性、账号与登录习惯、代码同步与参与开源的基本流程。">
-  <meta name="keywords" content="Claude Artifacts卡顿,ChatGPT Canvas断流,WebSocket长连接保活,SSE流式输出优化,AI专用网络节点">
-  <link rel="canonical" href="https://miaomiao-yun.cyou/claude-artifacts-realtime-rendering.html">
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Claude画布预览空白怎么办：区分生成失败、浏览器渲染和外部资源</title>
+<meta content="以生成式画布预览故障为例，检查生成状态、浏览器资源、代码错误及外部依赖，保留版本并安全缩小复现范围。" name="description"/>
+<meta content="Claude Artifacts卡顿,ChatGPT Canvas断流,WebSocket长连接保活,SSE流式输出优化,AI专用网络节点" name="keywords"/>
+<link href="https://miaomiao-yun.cyou/claude-artifacts-realtime-rendering.html" rel="canonical"/>
+<link href="style.css" rel="stylesheet"/>
 </head>
 <body>
-
-  <div class="chronometer-top-strip">
-    <div class="container chronometer-top-inner">
-      <span class="calibre-tag"><span class="ruby-jewel-dot"></span> SWISS HOROLOGY NETWORK ARCHITECTURE · CALIBRE MMY-2026</span>
-      <span class="calibre-tag">STRATUM-1 原子钟同步 · 全球骨干网抖动 &lt; 0.2ms</span>
-    </div>
-  </div>
-
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="index.html" class="brand-logo" aria-label="秒秒云首页">
-        <svg viewBox="0 0 230 50" role="img" aria-label="秒秒云陀飞轮擒纵齿轮与红宝石秒针融合标志">
-          <g transform="translate(26, 25)">
-            <circle cx="0" cy="0" r="20" fill="#FFFFFF" stroke="#0F2547" stroke-width="2.5"/>
-            <circle cx="0" cy="0" r="15" fill="none" stroke="#C27838" stroke-width="1.8" stroke-dasharray="4 3"/>
-            <line x1="-18" y1="0" x2="18" y2="0" stroke="#CBD5E1" stroke-width="1"/>
-            <line x1="0" y1="-18" x2="0" y2="18" stroke="#CBD5E1" stroke-width="1"/>
-            <line x1="-5" y1="7" x2="12" y2="-13" stroke="#BE123C" stroke-width="2.5" stroke-linecap="round"/>
-            <circle cx="9" cy="-10" r="3" fill="#BE123C"/>
-            <circle cx="0" cy="0" r="4" fill="#0F2547" stroke="#C27838" stroke-width="1.5"/>
-          </g>
-          <text x="56" y="29" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="800" fill="#0F2547" letter-spacing="1.5">秒秒云</text>
-          <circle cx="131" cy="14" r="3" fill="#BE123C"/>
-          <text x="56" y="43" font-family="SFMono-Regular, Consolas, monospace" font-size="8.5" font-weight="700" fill="#C27838" letter-spacing="1.8">CHRONO CLOUD</text>
-        </svg>
-      </a>
-      <nav class="main-nav" aria-label="主导航">
-        <a href="index.html">首页表盘</a>
-        <a href="index.html#advantages">天文台机芯</a>
-        <a href="index.html#streaming">流媒体与AI</a>
-        <a href="index.html#pricing">专线方案</a>
-        <a href="index.html#faq">技术问答</a>
-        <a href="chrono-column.html" class="nav-hub-pill active">刻度专栏</a>
-      </nav>
-    </div>
-  </header>
-
-  <section class="page-hero-banner">
-    <div class="container">
-      <span class="section-index-tag">在线学习</span>
-      <h1>在线编程学习与开源社区：LeetCode、Codecademy、GitHub 的访问习惯</h1>
-      <p>学得稳，才走得远。</p>
-    </div>
-  </section>
-
-  <main class="container">
-    <article class="article-layout">
-      <div class="article-meta-bar">
- <span>发布日期：2026-11-14</span>
- <span>撰写：秒秒云使用手记</span>
- <span>分类：<a href="chrono-column.html">刻度专栏</a> · 编程学习</span>
- </div>
-      <div class="article-content">
-<h2>一、练习平台的使用</h2>
-<p>在线编程练习平台对提交与判题的响应要求较高。选择稳定的网络，提交前先在本地运行并检查，减少无效提交。</p>
-<h2>二、课程平台</h2>
-<p>互动式课程依赖实时反馈。网络较慢时，优先在非高峰时段学习，并开启平台提供的离线或下载功能。</p>
-<h2>三、GitHub 与开源参与</h2>
-<ul><li>先阅读项目的贡献指南与行为准则。</li><li>从简单的文档修订与小问题开始。</li><li>使用分支提交修改，再发起合并请求。</li></ul>
-<h2>四、账号安全</h2>
-<p>开启两步验证，使用访问令牌而不是密码，限制令牌权限；不要把密钥写进代码仓库。</p>
-<h2>五、本地与云端同步</h2>
-<p>每天结束前把本地修改提交并推送，避免因设备故障丢失；网络不稳时先保存提交，稍后再推送。</p>
- </div>
-    </article>
-
-    <!-- Related Articles -->
-    <section class="section-block">
-      <div class="section-header">
-        <span class="section-index-tag">RELATED CALIBRE REPORTS</span>
-        <h2 class="section-title">刻度专栏 · 延伸阅读</h2>
-      </div>
-      <div class="grid-3">
-        <article class="dial-card">
-          <span class="calibre-serial">CALIBRE REPORT · 01</span>
-          <h3><a href="miaomiao-precision-network-benchmark.html">秒秒云节奏表：一天里什么时段适合做什么</a></h3>
-          <p>72小时连续采样，全面检验秒秒云在跨网与晚高峰极端工况下的真实表现。</p>
-        </article>
-        <article class="dial-card">
-          <span class="calibre-serial">CALIBRE REPORT · 02</span>
-          <h3><a href="ntp-stratum-clock-sync-trading.html">系统时间为什么重要：同步时间能解决的五类问题</a></h3>
-          <p>解析 Stratum-1 原子钟授时与跨境专线如何消除高频 API 交易订单中的时间戳漂移。</p>
-        </article>
-        <article class="dial-card">
-          <span class="calibre-serial">CALIBRE REPORT · 05</span>
-          <h3><a href="dns-over-https-privacy-protection.html">手机应用权限检查：哪些权限该给、哪些该收回</a></h4>
-          <p>对比 UDP 53 明文解析与 DoH/DoT 加密协议的性能差异与防污染实战。</p>
-        </article>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <nav class="footer-links" aria-label="页脚导航">
-        <a href="sitemap.html">网站地图</a>
-        <a href="about.html">关于我们</a>
-        <a href="terms.html">服务条款</a>
-        <a href="privacy.html">隐私政策</a>
-      </nav>
-      <p class="footer-copy">© 2026 秒秒云 · 瑞士天文台级精密跨境网络加速专线</p>
-    </div>
-  </footer>
-
+<div class="chronometer-top-strip">
+<div class="container chronometer-top-inner">
+<span class="calibre-tag"><span class="ruby-jewel-dot"></span> SWISS HOROLOGY NETWORK ARCHITECTURE · CALIBRE MMY-2026</span>
+<span class="calibre-tag">STRATUM-1 原子钟同步 · 全球骨干网抖动 &lt; 0.2ms</span>
+</div>
+</div>
+<header class="site-header">
+<div class="container header-inner">
+<a aria-label="秒秒云首页" class="brand-logo" href="index.html">
+<svg aria-label="秒秒云陀飞轮擒纵齿轮与红宝石秒针融合标志" role="img" viewbox="0 0 230 50">
+<g transform="translate(26, 25)">
+<circle cx="0" cy="0" fill="#FFFFFF" r="20" stroke="#0F2547" stroke-width="2.5"></circle>
+<circle cx="0" cy="0" fill="none" r="15" stroke="#C27838" stroke-dasharray="4 3" stroke-width="1.8"></circle>
+<line stroke="#CBD5E1" stroke-width="1" x1="-18" x2="18" y1="0" y2="0"></line>
+<line stroke="#CBD5E1" stroke-width="1" x1="0" x2="0" y1="-18" y2="18"></line>
+<line stroke="#BE123C" stroke-linecap="round" stroke-width="2.5" x1="-5" x2="12" y1="7" y2="-13"></line>
+<circle cx="9" cy="-10" fill="#BE123C" r="3"></circle>
+<circle cx="0" cy="0" fill="#0F2547" r="4" stroke="#C27838" stroke-width="1.5"></circle>
+</g>
+<text fill="#0F2547" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="800" letter-spacing="1.5" x="56" y="29">秒秒云</text>
+<circle cx="131" cy="14" fill="#BE123C" r="3"></circle>
+<text fill="#C27838" font-family="SFMono-Regular, Consolas, monospace" font-size="8.5" font-weight="700" letter-spacing="1.8" x="56" y="43">CHRONO CLOUD</text>
+</svg>
+</a>
+<nav aria-label="主导航" class="main-nav">
+<a href="index.html">首页表盘</a>
+<a href="index.html#advantages">天文台机芯</a>
+<a href="index.html#streaming">流媒体与AI</a>
+<a href="index.html#pricing">专线方案</a>
+<a href="index.html#faq">技术问答</a>
+<a class="nav-hub-pill active" href="chrono-column.html">刻度专栏</a>
+</nav>
+</div>
+</header>
+<section class="page-hero-banner">
+<div class="container">
+<span class="section-index-tag">在线学习</span>
+<h1>Claude画布预览空白怎么办：区分生成失败、浏览器渲染和外部资源</h1>
+<p>学得稳，才走得远。</p>
+</div>
+</section>
+<main class="container">
+<article class="article-layout">
+<div class="article-meta-bar">
+<span>发布日期：2026-11-14</span>
+<span>撰写：秒秒云使用手记</span>
+<span>分类：<a href="chrono-column.html">刻度专栏</a> · 编程学习</span>
+</div>
+<div class="article-content"><div data-swc-article-body="2026-11-16"><p>让Claude生成一个网页或可视化后，聊天区已经出现内容，右侧画布却空白，重新发送又得到不同版本。这时最需要保护的是已经完成的工作，而不是马上反复生成。空白可能来自生成尚未完成、预览代码错误、浏览器限制或外部资源加载失败，只有先分层判断，才能避免越修越乱。</p>
+<h2>先保存内容和当前版本</h2>
+<p>如果界面允许查看或导出生成内容，先保存一份自己有权保留的副本，记下发生问题的版本。对于包含私人资料的文档，备份应放在受控位置。不要为了让别人帮忙，直接发布整个对话或包含敏感数据的画布。截图应遮住账号和私人文件名称。</p>
+<p>记录生成请求是否已经结束，界面有没有额度、权限、服务繁忙或网络提示。若生成还没有完成，预览暂时不可用不一定代表故障。不同账户和设备支持的功能会变化，先确认当前功能范围，不把另一篇旧教程中的按钮位置当作所有版本都相同。</p>
+<h2>用一个最小作品检验预览环境</h2>
+<p>新建一个不含私人信息的简单示例，例如只显示标题和一个按钮的页面，不引用远程图片或复杂组件。如果这个示例也不能预览，优先调查浏览器、平台状态和会话环境。若简单示例正常，原作品的问题更可能与代码规模、依赖或具体交互有关。</p>
+<p>在开展<a href="https://dajichang.mom/">Claude画布预览空白排查</a>时，最小示例不是重新做一遍全部作品，而是保留一个能够证明问题的小范围测试。它应该只改变一个因素，避免在排查过程中引入新的库、更多图片和额外交互。</p>
+<h2>区分网络没加载与代码没运行</h2>
+<p>有基本技术经验的用户，可以通过浏览器开发工具查看控制台与网络请求，记录错误名称，而不是复制全部日志。资源请求失败通常要检查地址、权限或连接；脚本报错则需要查看对应代码。网络面板中的某个失败请求，也可能只是可选统计功能，不能看到红色就认定它导致空白。</p>
+<p>若作品引用了外部字体、图片或接口，先判断这些资源是否为预览必需。可以在副本中临时替换为本地文字或简单形状，再观察画布是否恢复。不能把私人密钥写进前端代码来解决接口权限问题，因为预览或分享后这些内容可能被其他人看到。</p>
+<h2>浏览器对照要保持清楚</h2>
+<p>检查浏览器版本和设备资源，关闭不必要的大型标签页，再重新打开作品。若怀疑扩展干扰，可以使用浏览器正式支持的隔离方式测试，但先确认自己能够重新登录。只对可信的平台进行有限对照，不把关闭所有保护作为长期解决办法。</p>
+<p>如果另一台设备可以显示同一作品，应比较浏览器和屏幕环境，而不是直接重新生成内容。若两台设备都在同一个版本失败，更应检查作品本身。对移动端与桌面端，还要区分功能支持差异；某些交互在小屏幕上不易操作，不等于资源没有加载。</p>
+<h2>让模型修复具体错误，不重写全部</h2>
+<p>向模型反馈时，说明当前版本、预期行为、实际现象和最小错误信息。例如“标题可见但图表区域为空，控制台提示某变量未定义”，比“帮我修好”更容易得到可检验的改动。要求保留已确认正常的内容，只修改相关部分，避免一次修复破坏其他页面结构。</p>
+<p>修复后对照前后差异，检查是否删除了数据、移除了交互或替换成静态图片。预览恢复不代表任务已经正确完成，内容、计算结果和按钮行为都需要继续验证。模型可能提出看似合理的解释，但应以复现结果为准，不把解释本身当作证据。</p>
+<h2>外部接口与分享状态要另外验证</h2>
+<p>涉及外部接口的作品，应区分预览环境与正式运行环境的限制。浏览器跨来源规则、认证方式和接口使用范围都可能影响请求。正确处理应依据平台与接口文档，不通过公开密码、放宽所有访问限制或关闭验证来换取暂时成功。</p>
+<p>若计划分享作品，先使用不含敏感信息的内容检查分享权限与访问效果。自己登录后能看到，不代表接收者也能看到；反过来，公开预览也不意味着作品来源可信。收到他人分享的画布时，不执行不明下载文件，不输入与作品无关的账户凭据。</p>
+<h2>把验收写成几个具体动作</h2>
+<p>至少检查首次打开、刷新、主要交互和不同窗口尺寸，确认内容没有被遮挡，也没有出现新的报错。记录最终正常版本以及修复的是哪一个问题。如果故障仍然发生，提交脱敏的最小示例和时间给平台支持，而不是不断覆盖唯一的工作版本。</p>
+<p>预览工具的价值在于快速看到结果，但快速并不等于可以省略验证。先保留作品，再隔离故障，最后逐项确认功能，这样才能让生成内容真正成为可继续使用的成果。</p></div></div>
+</article>
+<!-- Related Articles -->
+<section class="section-block">
+<div class="section-header">
+<span class="section-index-tag">RELATED CALIBRE REPORTS</span>
+<h2 class="section-title">刻度专栏 · 延伸阅读</h2>
+</div>
+<div class="grid-3">
+<article class="dial-card">
+<span class="calibre-serial">CALIBRE REPORT · 01</span>
+<h3><a href="miaomiao-precision-network-benchmark.html">秒秒云节奏表：一天里什么时段适合做什么</a></h3>
+<p>72小时连续采样，全面检验秒秒云在跨网与晚高峰极端工况下的真实表现。</p>
+</article>
+<article class="dial-card">
+<span class="calibre-serial">CALIBRE REPORT · 02</span>
+<h3><a href="ntp-stratum-clock-sync-trading.html">系统时间为什么重要：同步时间能解决的五类问题</a></h3>
+<p>解析 Stratum-1 原子钟授时与跨境专线如何消除高频 API 交易订单中的时间戳漂移。</p>
+</article>
+<article class="dial-card">
+<span class="calibre-serial">CALIBRE REPORT · 05</span>
+<h3><a href="dns-over-https-privacy-protection.html">手机应用权限检查：哪些权限该给、哪些该收回</a>
+<p>对比 UDP 53 明文解析与 DoH/DoT 加密协议的性能差异与防污染实战。</p>
+</h3></article>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="container footer-inner">
+<nav aria-label="页脚导航" class="footer-links">
+<a href="sitemap.html">网站地图</a>
+<a href="about.html">关于我们</a>
+<a href="terms.html">服务条款</a>
+<a href="privacy.html">隐私政策</a>
+</nav>
+<p class="footer-copy">© 2026 秒秒云 · 瑞士天文台级精密跨境网络加速专线</p>
+</div>
+</footer>
 </body>
 </html>

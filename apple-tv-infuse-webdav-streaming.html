@@ -1,118 +1,122 @@
 <!DOCTYPE html>
+
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>语言考试在线版的网络要求：设备、监考与应急 - 秒秒云刻度专栏</title>
-  <meta name="description" content="参加托福在家考、雅思等在线语言考试，对网络与设备有什么要求？整理考前检查、监考软件、网络要求与突发状况的应对。">
-  <meta name="keywords" content="Infuse 4K秒开,Apple TV代理配置,WebDAV挂载云盘,蓝光原盘流媒体加速,Stash分流规则">
-  <link rel="canonical" href="https://miaomiao-yun.cyou/apple-tv-infuse-webdav-streaming.html">
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Infuse连接WebDAV后播放卡顿：从目录读取到视频拖动分步检查</title>
+<meta content="区分WebDAV目录、鉴权、文件读取与播放器缓冲问题，用合法自有样片和逐项对照定位Infuse播放中断。" name="description"/>
+<meta content="Infuse 4K秒开,Apple TV代理配置,WebDAV挂载云盘,蓝光原盘流媒体加速,Stash分流规则" name="keywords"/>
+<link href="https://miaomiao-yun.cyou/apple-tv-infuse-webdav-streaming.html" rel="canonical"/>
+<link href="style.css" rel="stylesheet"/>
 </head>
 <body>
-
-  <div class="chronometer-top-strip">
-    <div class="container chronometer-top-inner">
-      <span class="calibre-tag"><span class="ruby-jewel-dot"></span> SWISS HOROLOGY NETWORK ARCHITECTURE · CALIBRE MMY-2026</span>
-      <span class="calibre-tag">STRATUM-1 原子钟同步 · 全球骨干网抖动 &lt; 0.2ms</span>
-    </div>
-  </div>
-
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="index.html" class="brand-logo" aria-label="秒秒云首页">
-        <svg viewBox="0 0 230 50" role="img" aria-label="秒秒云陀飞轮擒纵齿轮与红宝石秒针融合标志">
-          <g transform="translate(26, 25)">
-            <circle cx="0" cy="0" r="20" fill="#FFFFFF" stroke="#0F2547" stroke-width="2.5"/>
-            <circle cx="0" cy="0" r="15" fill="none" stroke="#C27838" stroke-width="1.8" stroke-dasharray="4 3"/>
-            <line x1="-18" y1="0" x2="18" y2="0" stroke="#CBD5E1" stroke-width="1"/>
-            <line x1="0" y1="-18" x2="0" y2="18" stroke="#CBD5E1" stroke-width="1"/>
-            <line x1="-5" y1="7" x2="12" y2="-13" stroke="#BE123C" stroke-width="2.5" stroke-linecap="round"/>
-            <circle cx="9" cy="-10" r="3" fill="#BE123C"/>
-            <circle cx="0" cy="0" r="4" fill="#0F2547" stroke="#C27838" stroke-width="1.5"/>
-          </g>
-          <text x="56" y="29" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="800" fill="#0F2547" letter-spacing="1.5">秒秒云</text>
-          <circle cx="131" cy="14" r="3" fill="#BE123C"/>
-          <text x="56" y="43" font-family="SFMono-Regular, Consolas, monospace" font-size="8.5" font-weight="700" fill="#C27838" letter-spacing="1.8">CHRONO CLOUD</text>
-        </svg>
-      </a>
-      <nav class="main-nav" aria-label="主导航">
-        <a href="index.html">首页表盘</a>
-        <a href="index.html#advantages">天文台机芯</a>
-        <a href="index.html#streaming">流媒体与AI</a>
-        <a href="index.html#pricing">专线方案</a>
-        <a href="index.html#faq">技术问答</a>
-        <a href="chrono-column.html" class="nav-hub-pill active">刻度专栏</a>
-      </nav>
-    </div>
-  </header>
-
-  <section class="page-hero-banner">
-    <div class="container">
-      <span class="section-index-tag">语言考试</span>
-      <h1>语言考试在线版的网络要求：设备、监考与应急</h1>
-      <p>设备要稳、网络要稳、心态更要稳。</p>
-    </div>
-  </section>
-
-  <main class="container">
-    <article class="article-layout">
-      <div class="article-meta-bar">
- <span>发布日期：2026-11-15</span>
- <span>撰写：秒秒云使用手记</span>
- <span>分类：<a href="chrono-column.html">刻度专栏</a> · 在线考试</span>
- </div>
-      <div class="article-content">
-<h2>一、先读官方要求</h2>
-<p>不同考试对设备、浏览器、摄像头与网络带宽的要求不同。考前一周把官方的技术要求逐条核对一遍。</p>
-<h2>二、设备与环境检查</h2>
-<ul><li>电脑电量充足并接电源。</li><li>摄像头、麦克风、耳机工作正常。</li><li>关闭所有不相关的软件与通知。</li></ul>
-<h2>三、网络的准备</h2>
-<p>使用有线网络，并让家人错开使用。参加官方提供的设备检测，在不同时段测试网络稳定性。</p>
-<h2>四、关于加速服务</h2>
-<p>考试软件对网络环境有明确规定，多数不建议在考试期间使用代理或虚拟网络。请遵守考场规则，不要冒险。</p>
-<h2>五、突发状况的应对</h2>
-<p>记录官方的技术支持联系方式。如果遇到断线，按规则尽快重连并联系监考，不要自行反复重启设备。</p>
- </div>
-    </article>
-
-    <!-- Related Articles -->
-    <section class="section-block">
-      <div class="section-header">
-        <span class="section-index-tag">RELATED CALIBRE REPORTS</span>
-        <h2 class="section-title">刻度专栏 · 延伸阅读</h2>
-      </div>
-      <div class="grid-3">
-        <article class="dial-card">
-          <span class="calibre-serial">CALIBRE REPORT · 01</span>
-          <h3><a href="miaomiao-precision-network-benchmark.html">秒秒云节奏表：一天里什么时段适合做什么</a></h3>
-          <p>72小时连续采样，全面检验秒秒云在跨网与晚高峰极端工况下的真实表现。</p>
-        </article>
-        <article class="dial-card">
-          <span class="calibre-serial">CALIBRE REPORT · 04</span>
-          <h3><a href="claude-artifacts-realtime-rendering.html">在线编程学习与开源社区：LeetCode、Codecademy、GitHub 的访问习惯</a></h3>
-          <p>深入排查大模型 SSE 流式输出与 WebSocket 双工信道断流根源。</p>
-        </article>
-        <article class="dial-card">
-          <span class="calibre-serial">CALIBRE REPORT · 05</span>
-          <h3><a href="dns-over-https-privacy-protection.html">手机应用权限检查：哪些权限该给、哪些该收回</a></h4>
-          <p>对比 UDP 53 明文解析与 DoH/DoT 加密协议的性能差异与防污染实战。</p>
-        </article>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <nav class="footer-links" aria-label="页脚导航">
-        <a href="sitemap.html">网站地图</a>
-        <a href="about.html">关于我们</a>
-        <a href="terms.html">服务条款</a>
-        <a href="privacy.html">隐私政策</a>
-      </nav>
-      <p class="footer-copy">© 2026 秒秒云 · 瑞士天文台级精密跨境网络加速专线</p>
-    </div>
-  </footer>
-
+<div class="chronometer-top-strip">
+<div class="container chronometer-top-inner">
+<span class="calibre-tag"><span class="ruby-jewel-dot"></span> SWISS HOROLOGY NETWORK ARCHITECTURE · CALIBRE MMY-2026</span>
+<span class="calibre-tag">STRATUM-1 原子钟同步 · 全球骨干网抖动 &lt; 0.2ms</span>
+</div>
+</div>
+<header class="site-header">
+<div class="container header-inner">
+<a aria-label="秒秒云首页" class="brand-logo" href="index.html">
+<svg aria-label="秒秒云陀飞轮擒纵齿轮与红宝石秒针融合标志" role="img" viewbox="0 0 230 50">
+<g transform="translate(26, 25)">
+<circle cx="0" cy="0" fill="#FFFFFF" r="20" stroke="#0F2547" stroke-width="2.5"></circle>
+<circle cx="0" cy="0" fill="none" r="15" stroke="#C27838" stroke-dasharray="4 3" stroke-width="1.8"></circle>
+<line stroke="#CBD5E1" stroke-width="1" x1="-18" x2="18" y1="0" y2="0"></line>
+<line stroke="#CBD5E1" stroke-width="1" x1="0" x2="0" y1="-18" y2="18"></line>
+<line stroke="#BE123C" stroke-linecap="round" stroke-width="2.5" x1="-5" x2="12" y1="7" y2="-13"></line>
+<circle cx="9" cy="-10" fill="#BE123C" r="3"></circle>
+<circle cx="0" cy="0" fill="#0F2547" r="4" stroke="#C27838" stroke-width="1.5"></circle>
+</g>
+<text fill="#0F2547" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="800" letter-spacing="1.5" x="56" y="29">秒秒云</text>
+<circle cx="131" cy="14" fill="#BE123C" r="3"></circle>
+<text fill="#C27838" font-family="SFMono-Regular, Consolas, monospace" font-size="8.5" font-weight="700" letter-spacing="1.8" x="56" y="43">CHRONO CLOUD</text>
+</svg>
+</a>
+<nav aria-label="主导航" class="main-nav">
+<a href="index.html">首页表盘</a>
+<a href="index.html#advantages">天文台机芯</a>
+<a href="index.html#streaming">流媒体与AI</a>
+<a href="index.html#pricing">专线方案</a>
+<a href="index.html#faq">技术问答</a>
+<a class="nav-hub-pill active" href="chrono-column.html">刻度专栏</a>
+</nav>
+</div>
+</header>
+<section class="page-hero-banner">
+<div class="container">
+<span class="section-index-tag">语言考试</span>
+<h1>Infuse连接WebDAV后播放卡顿：从目录读取到视频拖动分步检查</h1>
+<p>设备要稳、网络要稳、心态更要稳。</p>
+</div>
+</section>
+<main class="container">
+<article class="article-layout">
+<div class="article-meta-bar">
+<span>发布日期：2026-11-15</span>
+<span>撰写：秒秒云使用手记</span>
+<span>分类：<a href="chrono-column.html">刻度专栏</a> · 在线考试</span>
+</div>
+<div class="article-content"><div data-swc-article-body="2026-11-16"><p>Infuse能够看到WebDAV中的影片目录，却在播放时缓冲；或者影片顺畅，拖动进度后却要等很久，这些现象指向不同环节。目录列表通常只传输文件信息，播放需要连续读取内容，跳转则可能要求读取文件中的另一段。排查前先确认自己拥有文件访问权，不把第三方来源不明的资源当作诊断材料。</p>
+<h2>确认连接信息和样片条件</h2>
+<p>按照自己的WebDAV服务说明核对地址、路径、用户名和认证方式，区分服务器根目录与媒体目录。不要把账号密码直接放进公开链接，也不向陌生网站提交完整连接信息。若使用单独的应用密码，应按照服务支持方式管理，而不是随意共享主账户。</p>
+<p>准备一个体积较小、格式常见且自己可以合法使用的样片，并记录文件大小。测试先以这份文件为准，不从超高码率长片开始。这样可以更快区分服务可达性与持续传输能力，也能减少重复测试带来的流量消耗和平台请求压力。</p>
+<h2>目录慢与播放慢分别记录</h2>
+<p>连接后先观察能否打开上级目录、进入目标文件夹以及列出文件。大型目录、远端存储响应和库扫描都可能影响浏览体验。如果目录阶段就等待很久，不要先调播放器画质；应比较小目录是否同样慢，并核对服务端是否正在整理文件或处理大量请求。</p>
+<p>进行<a href="https://dajichang.mom/">Infuse WebDAV播放卡顿排查</a>时，可以把“打开目录”“开始播放”“连续观看”“拖动进度”四项分开记录。它们使用同一个服务，却不一定有同样的瓶颈。只有失败环节明确，后续对照才不会变成不断更换无关设置。</p>
+<h2>用同文件在不同路径下比较</h2>
+<p>如果有条件，把同一份自有样片放在可信的本地存储中，使用受支持方式播放，作为设备解码的参考。如果本地也卡顿，需要调查格式、音轨或设备状态；若本地正常而远端不稳，再把重点放在传输路径与服务端响应上。两份不同编码的视频不能构成严格对照。</p>
+<p>接着固定Infuse设备和样片，仅改变接入方式，例如从无线改为网线。若无法接线，可把设备临时移近路由器，记录位置变化。不要同时升级软件、调整节点并更换文件，否则即使改善了，也很难知道哪一步真正有效。</p>
+<h2>拖动进度慢要看随机读取能力</h2>
+<p>连续播放与跳转读取不同。跳到较远位置时，播放器可能需要请求文件的新片段，服务端的范围读取支持、存储响应和中间代理处理都会影响等待。不能仅凭开头播放正常，推断所有位置都能立即起播。先在同一文件上测试前段、中段与后段，再记录差异。</p>
+<p>对于自己管理的WebDAV服务，可查看正常访问日志与文件读取错误，核对软件版本和兼容性说明。普通使用者不需要人为构造大量请求压测服务器；把文件、位置、时间和客户端版本提交给提供方即可。不要采用无限增加并发的方式强行抢占带宽。</p>
+<h2>缓存选项应以当前版本说明为准</h2>
+<p>Infuse的缓冲与媒体服务支持会随版本变化，电视、手机和电脑上的可用功能也可能不同。先查看本机版本及官方说明，再判断某项设置是否存在。若尝试调整缓存，只改一项，使用同一样片重复测试，并留意设备剩余空间和后台任务。</p>
+<p>更大的预读并不总能解决所有问题。服务端限流、读取异常或本地解码失败，可能在缓冲增加后仍然出现。若调整没有改善，应恢复原值，避免累积难以解释的设置。也不要为了缓冲问题删除整个媒体库，除非已经确认问题确实与索引有关并做好恢复准备。</p>
+<h2>检查认证有效期和链接变化</h2>
+<p>播放一段时间后突然失败，还应核对账号状态、应用密码和服务端访问限制。某些文件入口或授权条件会变化，目录缓存中仍能看到旧文件，不代表当前读取请求一定获准。先用服务提供的正常入口确认文件仍然可用，不反复保存同一份失效配置。</p>
+<p>若服务端提示权限或配额问题，应按其说明处理。不能把所有访问拒绝都归为网络，也不应尝试绕开限制。共享设备上记得确认账户属于自己或已经获得授权，避免把个人云盘权限长时间留在公共电视盒子上。</p>
+<h2>验收时覆盖真正的观看动作</h2>
+<p>完成调整后，测试进入目录、起播、连续播放、暂停恢复和进度跳转，记录哪些项目改善。再用第二份合法文件检验结论是否只适用于单个样片。若只有特定文件失败，应保留格式和音轨信息供支持人员调查，不必将整套网络配置推倒重来。</p>
+<p>退出排查时收回不再需要的共享授权，保存有效配置的说明。稳定播放来自文件、服务、路径和设备共同配合；能够清楚指出失败发生在哪一步，比一张下载测速截图更能帮助解决问题。</p></div></div>
+</article>
+<!-- Related Articles -->
+<section class="section-block">
+<div class="section-header">
+<span class="section-index-tag">RELATED CALIBRE REPORTS</span>
+<h2 class="section-title">刻度专栏 · 延伸阅读</h2>
+</div>
+<div class="grid-3">
+<article class="dial-card">
+<span class="calibre-serial">CALIBRE REPORT · 01</span>
+<h3><a href="miaomiao-precision-network-benchmark.html">秒秒云节奏表：一天里什么时段适合做什么</a></h3>
+<p>72小时连续采样，全面检验秒秒云在跨网与晚高峰极端工况下的真实表现。</p>
+</article>
+<article class="dial-card">
+<span class="calibre-serial">CALIBRE REPORT · 04</span>
+<h3><a href="claude-artifacts-realtime-rendering.html">在线编程学习与开源社区：LeetCode、Codecademy、GitHub 的访问习惯</a></h3>
+<p>深入排查大模型 SSE 流式输出与 WebSocket 双工信道断流根源。</p>
+</article>
+<article class="dial-card">
+<span class="calibre-serial">CALIBRE REPORT · 05</span>
+<h3><a href="dns-over-https-privacy-protection.html">手机应用权限检查：哪些权限该给、哪些该收回</a>
+<p>对比 UDP 53 明文解析与 DoH/DoT 加密协议的性能差异与防污染实战。</p>
+</h3></article>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="container footer-inner">
+<nav aria-label="页脚导航" class="footer-links">
+<a href="sitemap.html">网站地图</a>
+<a href="about.html">关于我们</a>
+<a href="terms.html">服务条款</a>
+<a href="privacy.html">隐私政策</a>
+</nav>
+<p class="footer-copy">© 2026 秒秒云 · 瑞士天文台级精密跨境网络加速专线</p>
+</div>
+</footer>
 </body>
 </html>

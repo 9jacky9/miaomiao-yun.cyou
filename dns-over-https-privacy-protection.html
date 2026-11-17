@@ -1,118 +1,122 @@
 <!DOCTYPE html>
+
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>手机应用权限检查：哪些权限该给、哪些该收回 - 秒秒云刻度专栏</title>
-  <meta name="description" content="手机应用申请的权限很多，应该给哪些？介绍常见权限的含义、检查方法、按需授权的原则以及如何收回不必要的权限。">
-  <meta name="keywords" content="DoH加密DNS,DoT域名解析,DNS污染解决,防DNS泄露,Fake-IP分流配置">
-  <link rel="canonical" href="https://miaomiao-yun.cyou/dns-over-https-privacy-protection.html">
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DoH与DoT怎么选：加密DNS的作用、限制和验证步骤</title>
+<meta content="解释DoH、DoT保护的范围，检查浏览器与系统解析路径，使用可恢复的设置验证可用性而不破坏组织或家庭网络。" name="description"/>
+<meta content="DoH加密DNS,DoT域名解析,DNS污染解决,防DNS泄露,Fake-IP分流配置" name="keywords"/>
+<link href="https://miaomiao-yun.cyou/dns-over-https-privacy-protection.html" rel="canonical"/>
+<link href="style.css" rel="stylesheet"/>
 </head>
 <body>
-
-  <div class="chronometer-top-strip">
-    <div class="container chronometer-top-inner">
-      <span class="calibre-tag"><span class="ruby-jewel-dot"></span> SWISS HOROLOGY NETWORK ARCHITECTURE · CALIBRE MMY-2026</span>
-      <span class="calibre-tag">STRATUM-1 原子钟同步 · 全球骨干网抖动 &lt; 0.2ms</span>
-    </div>
-  </div>
-
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="index.html" class="brand-logo" aria-label="秒秒云首页">
-        <svg viewBox="0 0 230 50" role="img" aria-label="秒秒云陀飞轮擒纵齿轮与红宝石秒针融合标志">
-          <g transform="translate(26, 25)">
-            <circle cx="0" cy="0" r="20" fill="#FFFFFF" stroke="#0F2547" stroke-width="2.5"/>
-            <circle cx="0" cy="0" r="15" fill="none" stroke="#C27838" stroke-width="1.8" stroke-dasharray="4 3"/>
-            <line x1="-18" y1="0" x2="18" y2="0" stroke="#CBD5E1" stroke-width="1"/>
-            <line x1="0" y1="-18" x2="0" y2="18" stroke="#CBD5E1" stroke-width="1"/>
-            <line x1="-5" y1="7" x2="12" y2="-13" stroke="#BE123C" stroke-width="2.5" stroke-linecap="round"/>
-            <circle cx="9" cy="-10" r="3" fill="#BE123C"/>
-            <circle cx="0" cy="0" r="4" fill="#0F2547" stroke="#C27838" stroke-width="1.5"/>
-          </g>
-          <text x="56" y="29" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="800" fill="#0F2547" letter-spacing="1.5">秒秒云</text>
-          <circle cx="131" cy="14" r="3" fill="#BE123C"/>
-          <text x="56" y="43" font-family="SFMono-Regular, Consolas, monospace" font-size="8.5" font-weight="700" fill="#C27838" letter-spacing="1.8">CHRONO CLOUD</text>
-        </svg>
-      </a>
-      <nav class="main-nav" aria-label="主导航">
-        <a href="index.html">首页表盘</a>
-        <a href="index.html#advantages">天文台机芯</a>
-        <a href="index.html#streaming">流媒体与AI</a>
-        <a href="index.html#pricing">专线方案</a>
-        <a href="index.html#faq">技术问答</a>
-        <a href="chrono-column.html" class="nav-hub-pill active">刻度专栏</a>
-      </nav>
-    </div>
-  </header>
-
-  <section class="page-hero-banner">
-    <div class="container">
-      <span class="section-index-tag">手机安全</span>
-      <h1>手机应用权限检查：哪些权限该给、哪些该收回</h1>
-      <p>把权限还给自己。</p>
-    </div>
-  </section>
-
-  <main class="container">
-    <article class="article-layout">
-      <div class="article-meta-bar">
- <span>发布日期：2026-11-13</span>
- <span>撰写：秒秒云使用手记</span>
- <span>分类：<a href="chrono-column.html">刻度专栏</a> · 隐私权限</span>
- </div>
-      <div class="article-content">
-<h2>一、常见权限的含义</h2>
-<ul><li>位置：地图与外卖需要，多数应用其实不需要。</li><li>相机与麦克风：拍照、通话需要。</li><li>通讯录与相册：社交与备份可能需要，需谨慎。</li><li>通知与后台刷新：影响体验与耗电。</li></ul>
-<h2>二、授权的基本原则</h2>
-<p>只在使用时才允许，能用“大致位置”就不给“精确位置”。对看起来与功能无关的权限请求，选择拒绝。</p>
-<h2>三、怎么检查</h2>
-<p>在系统设置的隐私页面，可以按权限类型查看哪些应用使用了它，也可以按应用查看它拥有哪些权限。逐项审视，把不需要的收回。</p>
-<h2>四、与加速客户端的关系</h2>
-<p>代理类客户端需要网络与后台运行权限，但不需要通讯录、相册、位置等。如果它申请了这些权限，要提高警惕。</p>
-<h2>五、养成习惯</h2>
-<p>每季度检查一次，安装新应用时仔细看权限提示，卸载不再使用的应用。</p>
- </div>
-    </article>
-
-    <!-- Related Articles -->
-    <section class="section-block">
-      <div class="section-header">
-        <span class="section-index-tag">RELATED CALIBRE REPORTS</span>
-        <h2 class="section-title">刻度专栏 · 延伸阅读</h2>
-      </div>
-      <div class="grid-3">
-        <article class="dial-card">
-          <span class="calibre-serial">CALIBRE REPORT · 01</span>
-          <h3><a href="miaomiao-precision-network-benchmark.html">秒秒云节奏表：一天里什么时段适合做什么</a></h3>
-          <p>72小时连续采样，全面检验秒秒云在跨网与晚高峰极端工况下的真实表现。</p>
-        </article>
-        <article class="dial-card">
-          <span class="calibre-serial">CALIBRE REPORT · 03</span>
-          <h3><a href="apple-tv-infuse-webdav-streaming.html">语言考试在线版的网络要求：设备、监考与应急</a></h3>
-          <p>针对 Apple TV 4K 用户挂载云盘播放 80GB 蓝光原盘的缓存与分流精调指南。</p>
-        </article>
-        <article class="dial-card">
-          <span class="calibre-serial">CALIBRE REPORT · 06</span>
-          <h3><a href="multi-region-cdn-origin-shield.html">CDN 是什么：为什么有些网站在海外很快、有些很慢</a></h4>
-          <p>探讨跨境独立站如何利用源站护盾与低抖动管理专线提升全球访问转化率。</p>
-        </article>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <nav class="footer-links" aria-label="页脚导航">
-        <a href="sitemap.html">网站地图</a>
-        <a href="about.html">关于我们</a>
-        <a href="terms.html">服务条款</a>
-        <a href="privacy.html">隐私政策</a>
-      </nav>
-      <p class="footer-copy">© 2026 秒秒云 · 瑞士天文台级精密跨境网络加速专线</p>
-    </div>
-  </footer>
-
+<div class="chronometer-top-strip">
+<div class="container chronometer-top-inner">
+<span class="calibre-tag"><span class="ruby-jewel-dot"></span> SWISS HOROLOGY NETWORK ARCHITECTURE · CALIBRE MMY-2026</span>
+<span class="calibre-tag">STRATUM-1 原子钟同步 · 全球骨干网抖动 &lt; 0.2ms</span>
+</div>
+</div>
+<header class="site-header">
+<div class="container header-inner">
+<a aria-label="秒秒云首页" class="brand-logo" href="index.html">
+<svg aria-label="秒秒云陀飞轮擒纵齿轮与红宝石秒针融合标志" role="img" viewbox="0 0 230 50">
+<g transform="translate(26, 25)">
+<circle cx="0" cy="0" fill="#FFFFFF" r="20" stroke="#0F2547" stroke-width="2.5"></circle>
+<circle cx="0" cy="0" fill="none" r="15" stroke="#C27838" stroke-dasharray="4 3" stroke-width="1.8"></circle>
+<line stroke="#CBD5E1" stroke-width="1" x1="-18" x2="18" y1="0" y2="0"></line>
+<line stroke="#CBD5E1" stroke-width="1" x1="0" x2="0" y1="-18" y2="18"></line>
+<line stroke="#BE123C" stroke-linecap="round" stroke-width="2.5" x1="-5" x2="12" y1="7" y2="-13"></line>
+<circle cx="9" cy="-10" fill="#BE123C" r="3"></circle>
+<circle cx="0" cy="0" fill="#0F2547" r="4" stroke="#C27838" stroke-width="1.5"></circle>
+</g>
+<text fill="#0F2547" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="800" letter-spacing="1.5" x="56" y="29">秒秒云</text>
+<circle cx="131" cy="14" fill="#BE123C" r="3"></circle>
+<text fill="#C27838" font-family="SFMono-Regular, Consolas, monospace" font-size="8.5" font-weight="700" letter-spacing="1.8" x="56" y="43">CHRONO CLOUD</text>
+</svg>
+</a>
+<nav aria-label="主导航" class="main-nav">
+<a href="index.html">首页表盘</a>
+<a href="index.html#advantages">天文台机芯</a>
+<a href="index.html#streaming">流媒体与AI</a>
+<a href="index.html#pricing">专线方案</a>
+<a href="index.html#faq">技术问答</a>
+<a class="nav-hub-pill active" href="chrono-column.html">刻度专栏</a>
+</nav>
+</div>
+</header>
+<section class="page-hero-banner">
+<div class="container">
+<span class="section-index-tag">手机安全</span>
+<h1>DoH与DoT怎么选：加密DNS的作用、限制和验证步骤</h1>
+<p>把权限还给自己。</p>
+</div>
+</section>
+<main class="container">
+<article class="article-layout">
+<div class="article-meta-bar">
+<span>发布日期：2026-11-13</span>
+<span>撰写：秒秒云使用手记</span>
+<span>分类：<a href="chrono-column.html">刻度专栏</a> · 隐私权限</span>
+</div>
+<div class="article-content"><div data-swc-article-body="2026-11-16"><p>打开网页之前，设备通常要先查询域名对应的地址。加密DNS让这一查询过程在客户端与选定解析服务之间受到加密保护，但它不是匿名工具，也不等于所有应用流量都经过代理。理解保护范围，再决定在哪一层设置，比看到“隐私更好”就同时修改浏览器、系统和路由器更可靠。</p>
+<h2>DoH与DoT处理的是哪一段信息</h2>
+<p>DoH通常借助HTTPS传输DNS查询，DoT则使用TLS保护DNS传输。它们的共同目标是保护到解析服务这段通信，而不是改变网站本身如何记录访问。解析服务仍然可能知道查询内容，因此选择服务方时需要了解其政策、可用性和管理方式，不是只比较一个响应速度数字。</p>
+<p>网站登录、应用账号、浏览器存储和目标服务器仍可能识别用户。开启加密DNS不会自动隐藏所有网络元数据，也不会替代HTTPS、账号安全或组织数据规范。把这些边界讲清楚，才能避免因为打开一个开关，就误以为可以放心提交任何私人资料。</p>
+<h2>先确认目前是谁负责解析</h2>
+<p>一台设备可能由系统、浏览器、代理客户端或应用自己的组件完成解析。浏览器设置不一定影响所有软件，系统设置也可能被特定应用覆盖。修改前记录当前网络和解析方式，检查是否处于公司、学校或家庭受管理环境，避免破坏管理员需要的内部名称解析。</p>
+<p>进行<a href="https://dajichang.mom/">加密DNS设置与验证</a>时，先选择一个明确范围，例如只观察某个浏览器。不要一开始就替换路由器设置影响全家设备。若使用组织电脑，应先了解允许的配置方式，而不是将无法访问内部系统视作需要绕开的障碍。</p>
+<h2>选择受支持的设置入口</h2>
+<p>通过当前操作系统或浏览器的官方设置使用其支持的加密DNS功能，核对服务地址格式和可用选项。不同版本可能提供自动、增强或严格等保护方式，其回退行为也可能不同，应阅读界面说明。不要从陌生脚本一键导入大量服务器，也不要默认旧教程列出的公共服务仍然提供相同功能。</p>
+<p>保留原设置截图或记录，然后只修改所选范围。若设备没有官方支持方式，不必为了加密DNS安装来历不明的根证书或网络驱动。加密DNS与证书信任是不同概念，要求导入不明证书的所谓优化教程尤其需要谨慎核实。</p>
+<h2>验证可访问性和解析路径</h2>
+<p>修改后先访问几个平常正常的网站，再测试工作中使用的内部域名、打印机或家庭存储名称。还应检查浏览器提供的诊断信息，了解当前是否实际启用了预期模式。网页能打开只是可用性证据，不能单独证明查询一定采用了加密方式。</p>
+<p>外部检测网站能提供一定线索，但它观察的是特定测试请求，不一定代表所有应用。不要因为一次检测结果就宣称系统完全没有解析泄漏。若需要更严谨地确认，应由具备权限和能力的人员使用适当诊断方法，并明确测试范围与限制。</p>
+<h2>出现故障时按影响范围恢复</h2>
+<p>若修改后全部网站都打不开，先恢复刚刚改变的解析设置，确认是否立即改善。若只有内部资源失效，则调查其是否依赖组织解析或局域网名称。不要继续叠加多个公共解析地址，也不要在未确认原因时清空整个网络配置。</p>
+<p>移动网络、公共热点和家庭宽带的条件可能不同，切换网络后需要复测。门户认证环境尤其可能有独立登录流程，应通过网络提供方明确的入口处理。严格保护模式在解析服务不可达时可能表现不同，因此便利性与失败行为都应纳入自己的选择。</p>
+<h2>加密DNS不是加速保证</h2>
+<p>域名查询只是访问流程的一部分。解析响应快并不代表后续连接、服务器处理或文件下载都快；内容分发选择还可能受到解析位置与服务策略影响。比较体验时用同一设备和目标，观察首次访问与重复访问的区别，不把缓存命中造成的变化误认为网络整体提升。</p>
+<p>也不要为了速度频繁切换解析服务。稳定、可信和符合使用环境，通常比一次极小的延迟差异更重要。若网站响应慢但解析正常，应继续查连接与应用层，不把所有网络问题都交给DNS设置处理。</p>
+<h2>留下容易维护的配置说明</h2>
+<p>最后记录修改了哪个范围、使用什么服务、为何选择该模式，以及出现问题如何恢复。设备交给家人或同事使用时，这份说明能减少误解。后续升级或服务调整后，重新检查设置是否仍符合预期，而不是认为一次开启就永远不用关注。</p>
+<p>加密DNS提供的是一项具体保护，需要与其他安全习惯配合使用。清楚它覆盖什么、不覆盖什么，才能既获得实际收益，也保留正常网络工作所需的兼容性。</p><p>有儿童过滤或家庭访问规则的网络，还应确认修改后这些既有规则没有意外失效。</p></div></div>
+</article>
+<!-- Related Articles -->
+<section class="section-block">
+<div class="section-header">
+<span class="section-index-tag">RELATED CALIBRE REPORTS</span>
+<h2 class="section-title">刻度专栏 · 延伸阅读</h2>
+</div>
+<div class="grid-3">
+<article class="dial-card">
+<span class="calibre-serial">CALIBRE REPORT · 01</span>
+<h3><a href="miaomiao-precision-network-benchmark.html">秒秒云节奏表：一天里什么时段适合做什么</a></h3>
+<p>72小时连续采样，全面检验秒秒云在跨网与晚高峰极端工况下的真实表现。</p>
+</article>
+<article class="dial-card">
+<span class="calibre-serial">CALIBRE REPORT · 03</span>
+<h3><a href="apple-tv-infuse-webdav-streaming.html">语言考试在线版的网络要求：设备、监考与应急</a></h3>
+<p>针对 Apple TV 4K 用户挂载云盘播放 80GB 蓝光原盘的缓存与分流精调指南。</p>
+</article>
+<article class="dial-card">
+<span class="calibre-serial">CALIBRE REPORT · 06</span>
+<h3><a href="multi-region-cdn-origin-shield.html">CDN 是什么：为什么有些网站在海外很快、有些很慢</a>
+<p>探讨跨境独立站如何利用源站护盾与低抖动管理专线提升全球访问转化率。</p>
+</h3></article>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="container footer-inner">
+<nav aria-label="页脚导航" class="footer-links">
+<a href="sitemap.html">网站地图</a>
+<a href="about.html">关于我们</a>
+<a href="terms.html">服务条款</a>
+<a href="privacy.html">隐私政策</a>
+</nav>
+<p class="footer-copy">© 2026 秒秒云 · 瑞士天文台级精密跨境网络加速专线</p>
+</div>
+</footer>
 </body>
 </html>
